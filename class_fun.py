@@ -10,7 +10,6 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 
-# тест
 
 class StageResults:
     """
@@ -40,8 +39,8 @@ class StageResults:
                      for match in match_page.find_all('a', {'class': 'match-row_link'})]
 
         pen_winners = ['' if penalty.contents == [] else str(1) if penalty.contents[0][1:-1].split('-')[0] >
-                            penalty.contents[0][1:-1].split('-')[0]
-                            else str(2) for penalty in penalties]
+                                                                   penalty.contents[0][1:-1].split('-')[0]
+                                                                   else str(2) for penalty in penalties]
 
         home_team = []
         home_score = []
@@ -77,6 +76,7 @@ class GoogleSheet:
 
         :return: параметры авторизации для подключения к гугл доку
         """
+        creds = None
 
         scopes = ['https://www.googleapis.com/auth/spreadsheets']
 
@@ -132,7 +132,7 @@ class GoogleSheet:
         }).execute()
 
 
-def blank_insert(list_example: Tuple[List[str], List[str], List[str], List[str],  List[str]]) -> None:
+def blank_insert(list_example: Tuple[List[str], List[str], List[str], List[str], List[str]]) -> None:
     """
     Функция получает список и возвращает его же, только с лишними пустыми элементами (для упрощения заполнения)
 

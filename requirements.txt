@@ -7,3 +7,4 @@ googleapis-common-protos==1.53.0
 bs4==0.0.1
 requests==2.24.0
 typing-extensions==3.7.4.3
+beautifulsoup4~=4.9.1

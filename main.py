@@ -30,7 +30,8 @@ elif datetime.datetime.today() < datetime.datetime.strptime('08.07.2021 01:10', 
     table_range = 'l17:o22'
     pen_range = 'p'
     start_range = 18
-elif datetime.datetime.today() < datetime.datetime.strptime('12.07.2021 01:10', '%d.%m.%Y %H:%M'):
+# elif datetime.datetime.today() < datetime.datetime.strptime('12.07.2021 01:10', '%d.%m.%Y %H:%M'):
+else:
     stage = '2001028'
     table_range = 'q19:t20'
     pen_range = 'u'
