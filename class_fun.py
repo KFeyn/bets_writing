@@ -21,7 +21,7 @@ class StageResults:
         self.__link = link
         self.__stage = stage
 
-    def get_result(self) -> Tuple[List[str], List[str], List[str], List[str], List[str]]:
+    def get_result(self) -> List[List[str]]:
         """
         Получаем команды и голы с сайта уефа
 
@@ -57,7 +57,7 @@ class StageResults:
                 home_score.append('')
                 away_score.append('')
 
-        return home_team, home_score, away_score, away_team, pen_winners
+        return [home_team, home_score, away_score, away_team, pen_winners]
 
 
 class GoogleSheet:
@@ -109,8 +109,7 @@ class GoogleSheet:
 
         return values
 
-    def set_values(self, table_range: str, values: Tuple[List[str], List[str], List[str], List[str], List[str]]) \
-            -> None:
+    def set_values(self, table_range: str, values: List[List[str]]) -> None:
         """
         Функция записывает данные в табличку
 
@@ -132,7 +131,7 @@ class GoogleSheet:
         }).execute()
 
 
-def blank_insert(list_example: Tuple[List[str], List[str], List[str], List[str], List[str]]) -> None:
+def blank_insert(list_example: List[List[str]]) -> None:
     """
     Функция получает список и возвращает его же, только с лишними пустыми элементами (для упрощения заполнения)
 

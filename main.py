@@ -54,4 +54,3 @@ for i in range(len(results[4])):
     if results[4][i] != '':
         ran = 'Результаты!' + pen_range + str(start_range + 4 * i) + ':' + pen_range + str(start_range + 4 * i + 1)
         GoogleSheet(sheet_id).set_values(ran, [[results[4][i]]])
-
